@@ -9,3 +9,4 @@ export * from "./filter-checkbox";
 export * from "./range-slider";
 export * from "./product-card";
 export * from "./product-group-list";
+export * from "./search-input";

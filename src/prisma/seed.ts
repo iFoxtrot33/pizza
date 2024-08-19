@@ -132,6 +132,32 @@ async function up() {
       generateProductItem({ productId: 17 }),
     ],
   });
+
+  await prisma.cart.createMany({
+    data: [
+      {
+        userId: 1,
+        totalAmount: 0,
+        token: "11111111",
+      },
+      {
+        userId: 2,
+        totalAmount: 0,
+        token: "2222222",
+      },
+    ],
+  });
+
+  await prisma.cartItem.create({
+    data: {
+      cartId: 1,
+      productItemId: 1,
+      quantity: 2,
+      ingredients: {
+        connect: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }],
+      },
+    },
+  });
 }
 
 async function down() {
