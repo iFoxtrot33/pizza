@@ -11,3 +11,4 @@ export * from "./product-card";
 export * from "./product-group-list";
 export * from "./search-input";
 export * from "./checkbox-filters-group";
+export * from "./pizza-image";
