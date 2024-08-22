@@ -12,3 +12,6 @@ export * from "./product-group-list";
 export * from "./search-input";
 export * from "./checkbox-filters-group";
 export * from "./pizza-image";
+export * from "./modals/";
+export * from "./chose-pizza-form";
+export * from "./chose-product-form";

@@ -5,7 +5,7 @@ import { ProductWithRelations } from "@/@types/prisma";
 import React from "react";
 import toast from "react-hot-toast";
 import { ChoosePizzaForm } from "./chose-pizza-form";
-import { ChooseProductForm } from "./choose-product-form";
+import { ChooseProductForm } from "./chose-product-form";
 
 interface Props {
   product: ProductWithRelations;
