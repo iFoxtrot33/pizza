@@ -7,7 +7,7 @@ import { PizzaImage } from "./pizza-image";
 import { Title } from "./title";
 import { Button } from "../ui";
 import { GroupVariants } from "./group-variants";
-import { PizzaSize, PizzaType, pizzaTypes } from "@/constants/pizza";
+import { PizzaSize, PizzaType, pizzaTypes } from "@/constants";
 import { IngredientItem } from "./ingredient-item";
 import { cn } from "@/lib/utils";
 import { getPizzaDetails } from "@/lib";
@@ -23,9 +23,6 @@ interface Props {
   className?: string;
 }
 
-/**
- * Форма выбора ПИЦЦЫ
- */
 export const ChoosePizzaForm: React.FC<Props> = ({
   name,
   items,
