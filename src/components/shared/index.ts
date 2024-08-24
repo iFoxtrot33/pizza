@@ -16,3 +16,8 @@ export * from "./modals/";
 export * from "./chose-pizza-form";
 export * from "./chose-product-form";
 export * from "./ingredient-item";
+export * from "./group-variants";
+export * from "./cart-button";
+export * from "./cart-drawer";
+export * from "./cart-item-details";
+export * from "./cart-drawer-item";
