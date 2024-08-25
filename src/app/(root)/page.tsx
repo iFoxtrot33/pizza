@@ -1,49 +1,53 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import {
   Container,
+  Filters,
   Title,
   TopBar,
-  Filters,
-  ProductGroupList,
+  ProductsGroupList,
+  Stories,
 } from "@/components/shared";
-import { prisma } from "@/prisma/prisma-client";
+import { Suspense } from "react";
+import { GetSearchParams, findPizzas } from "@/lib/find-pizzas";
 
-export default async function Home() {
-  const categories = await prisma.category.findMany({
-    include: {
-      products: {
-        include: {
-          items: true,
-        },
-      },
-    },
-  });
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: GetSearchParams;
+}) {
+  const categories = await findPizzas(searchParams);
 
   return (
     <>
       <Container className="mt-10">
         <Title text="Все пиццы" size="lg" className="font-extrabold" />
       </Container>
+
       <TopBar
         categories={categories.filter(
           (category) => category.products.length > 0
         )}
       />
+
+      <Stories />
+
       <Container className="mt-10 pb-14">
-        <div className="flex gap-[60px]">
+        <div className="flex gap-[80px]">
+          {/* Фильтрация */}
           <div className="w-[250px]">
-            <Filters />
+            <Suspense>
+              <Filters />
+            </Suspense>
           </div>
 
+          {/* Список товаров */}
           <div className="flex-1">
             <div className="flex flex-col gap-16">
               {categories.map(
                 (category) =>
                   category.products.length > 0 && (
-                    <ProductGroupList
-                      title={category.name}
+                    <ProductsGroupList
                       key={category.id}
+                      title={category.name}
                       categoryId={category.id}
                       items={category.products}
                     />
