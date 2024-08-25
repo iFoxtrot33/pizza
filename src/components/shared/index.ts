@@ -21,3 +21,5 @@ export * from "./cart-button";
 export * from "./cart-drawer";
 export * from "./cart-item-details";
 export * from "./cart-drawer-item";
+export * from "./white-block";
+export * from "./checkout-item-details";
