@@ -39,3 +39,4 @@ export * from "./profile-button";
 export * from "./info-block";
 export * from "./form";
 export * from "./email-temapltes";
+export * from "./stories";
