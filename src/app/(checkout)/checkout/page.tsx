@@ -10,7 +10,7 @@ import {
   CheckoutAddressForm,
   CheckoutCart,
   CheckoutPersonalForm,
-} from "@/components";
+} from "@/components/shared";
 import { CheckoutFormValues, checkoutFormSchema } from "@/constants";
 import { useCart } from "@/hooks";
 import { createOrder } from "@/app/actions";

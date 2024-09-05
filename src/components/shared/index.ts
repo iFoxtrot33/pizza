@@ -40,3 +40,4 @@ export * from "./info-block";
 export * from "./form";
 export * from "./email-temapltes";
 export * from "./stories";
+export * from "./product-group-list";
